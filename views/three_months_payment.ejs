@@ -1,0 +1,20 @@
+<% layout("common/common_layout") %>
+<% head = '<link rel="stylesheet" href="/css/payment.css" />' %>
+
+<div class="payment">
+  <section>
+    <div class="product">
+      <div class="description">
+        <h3>3ヶ月コース</h3>
+        <h5>12,000円 / 月</h5>
+      </div>
+    </div>
+    <form action="/payment/checkout" method="POST">
+      <!-- Add a hidden field with the lookup_key of your Price -->
+      <input type="hidden" name="lookup_key" value="{{PRICE_LOOKUP_KEY}}" />
+      <button id="checkout-and-portal-button" type="submit">
+        申し込みはこちら
+      </button>
+    </form>
+  </section>
+</div>

@@ -14,7 +14,7 @@ const CommonRouter = require("./routes/common-router");
 const connectDB = require("./db/connect");
 
 const app = express();
-const PORT = 8000;
+const PORT = process.env.PORT || 8000;
 
 // MongoDB接続
 const dbConnectStart = async () => {

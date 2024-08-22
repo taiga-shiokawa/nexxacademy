@@ -19,7 +19,7 @@ const PORT = 8000;
 // MongoDB接続
 const dbConnectStart = async () => {
   try {
-    await connectDB(process.env.MONGO_URL);
+    await connectDB(process.env.MONGO_HEROKU_URL ||process.env.MONGO_URL);
   } catch (err) {
     console.log(`DB接続中に予期せぬエラーが発生しました: ${err}`);
   }

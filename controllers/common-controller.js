@@ -8,6 +8,10 @@ const Inquiry = require("../models/InquiryInfo");
 // Resend環境変数
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+const PRICE_ID_SINGLE = process.env.PRICE_ID_SINGLE || process.env.PRICE_ID_TEST;
+const PRICE_ID_ONE_MONTH = process.env.PRICE_ID_ONE_MONTH || process.env.PRICE_ID_TEST;
+const PRICE_ID_THREE_MONTHS = process.env.PRICE_ID_THREE_MONTHS || process.env.PRICE_ID_TEST;
+
 module.exports.renderTopPage = (req, res) => {
   res.render("index");
 };
@@ -81,15 +85,15 @@ module.exports.inquirySend = async (req, res) => {
 };
 
 module.exports.singlePaymentPage = (req, res) => {
-  res.render("single_payment", { PRICE_LOOKUP_KEY: process.env.PRICE_ID_TEST });
+  res.render("single_payment", { PRICE_LOOKUP_KEY: PRICE_ID_SINGLE });
 };
 
 module.exports.oneMonthPaymentPage = (req, res) => {
-  res.render("one_month_payment", { PRICE_LOOKUP_KEY: process.env.PRICE_ID_TEST });
+  res.render("one_month_payment", { PRICE_LOOKUP_KEY: PRICE_ID_ONE_MONTH });
 };
 
 module.exports.threeMonthsPaymentPage = (req, res) => {
-  res.render("three_months_payment", { PRICE_LOOKUP_KEY: process.env.PRICE_ID_TEST });
+  res.render("three_months_payment", { PRICE_LOOKUP_KEY: PRICE_ID_THREE_MONTHS });
 };
 
 module.exports.paymentCheckout = async (req, res) => {

@@ -623,7 +623,7 @@ img {
 
 .accordion__question::after {
   display: block;
-  content: 'more';
+  content: '＋';
   position: absolute;
   top: 50%;
   right: 0;
@@ -634,7 +634,7 @@ img {
 }
 
 .accordion__question.active::after {
-  content: 'back';
+  content: '−';
 }
 
 .accordion__answer {

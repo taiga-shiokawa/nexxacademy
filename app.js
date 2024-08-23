@@ -50,6 +50,10 @@ app.get("/cancel", (req, res) => {
   res.render("payment_cancel");
 });
 
+app.get("/legal/specific-commercial-transaction", (req, res) => {
+  res.render("specific-commercial-transaction");
+;})
+
 async function startServer() {
   await dbConnectStart();
   app.listen(PORT, () => {

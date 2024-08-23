@@ -692,10 +692,16 @@ img {
   color: #fff;
   padding: 50px 20px;
   background-color: #f9f9f9;
-
   place-items: center;
 }
 
+.footer .footer-items {
+  display: flex;
+}
+
+.footer .footer-items span {
+  margin-left: 50px;
+}
 .summary-head {
   font-size: 30px;
   margin-bottom: 30px;
